@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>סדנת הכנה וליווי שנתי לסייעות אישיות</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Rubik:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rubik', 'Alef', Arial, sans-serif;
+            background: #F5F0EB;
+            color: #2E3B3E;
+            line-height: 1.7;
+            direction: rtl;
+            padding: clamp(12px, 3vw, 28px);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+            word-wrap: break-word;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: clamp(20px, 4vw, 32px);
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(145deg, #7A9E9F 0%, #5B8A8C 100%);
+            color: white;
+            padding: clamp(30px, 7vw, 55px) clamp(20px, 6vw, 45px);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -70px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -90px;
+            left: -50px;
+            width: 260px;
+            height: 260px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.35;
+            letter-spacing: -0.3px;
+            text-wrap: balance;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            opacity: 0.93;
+            margin-bottom: 1.8rem;
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .hero .instructors {
+            font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+            font-weight: 500;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 50px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            max-width: 100%;
+            line-height: 1.5;
+        }
+
+        .accent-leaf {
+            display: inline-block;
+            margin: 0 6px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        .gender-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 15px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main content */
+        .infographic {
+            padding: clamp(20px, 5vw, 45px);
+            background: #FDF9F5;
+        }
+
+        .intro-text {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            margin-bottom: 30px;
+            color: #3A4A5C;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .quote-box {
+            background: #ffffff;
+            border-right: 6px solid #C28B7B;
+            padding: 25px clamp(15px, 4vw, 30px);
+            border-radius: 14px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-weight: 500;
+            color: #3A4A5C;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 18px;
+            padding: clamp(18px, 4vw, 28px) clamp(16px, 3vw, 22px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #EAE3DB;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(0,0,0,0.07);
+        }
+
+        .info-card h3 {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            color: #5B8A8C;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card p {
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            color: #3A4A5C;
+            line-height: 1.6;
+        }
+
+        .whatsapp-banner {
+            background: #E8F0EE;
+            border-radius: 18px;
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-weight: 500;
+            color: #3A4A5C;
+            border: 1px solid #BED6D0;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+        }
+
+        .whatsapp-banner span {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2.1rem);
+            font-weight: 600;
+            color: #3A4A5C;
+            margin: 45px 0 22px;
+            position: relative;
+            padding-bottom: 14px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 65px;
+            height: 4px;
+            background: #C28B7B;
+            border-radius: 4px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .topic-tag {
+            background: #ffffff;
+            padding: 13px 17px;
+            border-radius: 40px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-weight: 500;
+            color: #3A4A5C;
+            border: 1px solid #EAE3DB;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+            word-break: break-word;
+        }
+
+        .topic-tag:hover {
+            background: #f0f8f7;
+            border-color: #b2cece;
+            transform: scale(1.02);
+        }
+
+        .topic-tag span {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .tech-details {
+            background: #F0F4F3;
+            padding: clamp(20px, 4vw, 30px);
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-details ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tech-details ul li {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .price-box {
+            background: white;
+            border: 2px dashed #C28B7B;
+            padding: 25px 20px;
+            border-radius: 18px;
+            text-align: center;
+            margin: 25px 0 35px;
+        }
+
+        .price-box .full-price {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 700;
+            color: #3A4A5C;
+            margin-bottom: 8px;
+        }
+
+        .price-box .early-bird {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #C28B7B;
+            font-weight: 600;
+        }
+
+        .instructors-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 25px;
+        }
+
+        .instructor-card {
+            flex: 1 1 260px;
+            background: white;
+            border-radius: 18px;
+            padding: clamp(18px, 4vw, 28px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #EAE3DB;
+            transition: transform 0.2s;
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .instructor-card h3 {
+            color: #5B8A8C;
+            margin-bottom: 12px;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        /* Form section */
+        .form-section {
+            background: #ffffff;
+            padding: clamp(35px, 7vw, 55px) clamp(20px, 5vw, 45px);
+            border-top: 1px solid #EAE3DB;
+            text-align: center;
+        }
+
+        .form-section h2 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 600;
+            color: #3A4A5C;
+            margin-bottom: 15px;
+        }
+
+        .form-section p {
+            margin-bottom: 28px;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: #3A4A5C;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            background: #5B8A8C;
+            color: white;
+            text-decoration: none;
+            padding: 16px 42px;
+            border-radius: 45px;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 18px rgba(91, 138, 140, 0.35);
+            min-height: 48px; /* Standard Apple touch target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.97);
+            background: #3d5f61;
+        }
+
+        .submit-btn:hover {
+            background: #4a7577;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(91, 138, 140, 0.45);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.95rem;
+            color: #5B7D7F;
+            background: #F5F0EB;
+            border-top: 1px solid #EAE3DB;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* iPhone / small screen refinements */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            .instructors-section {
+                flex-direction: column;
+            }
+            .whatsapp-banner {
+                flex-direction: row;
+                align-items: center;
+                text-align: right;
+            }
+            .submit-btn {
+                width: 100%;
+                padding: 18px 20px;
+            }
+        }
+
+        /* Prevent overflow on all screens */
+        img, svg, iframe, .container, .hero, .infographic {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>סדנת הכנה ותכנית הדרכה שנתית<br>לסייעות אישיות לילדים-ות אוטיסטים-ות</h1>
+            <div class="subtitle">
+                <strong>בהנחיית:</strong><br>
+                ד״ר אריאלה עילם - פסיכולוגית שיקומית מדריכה<br>
+                אלה קורילן - אשת חינוך אוטיסטית
+            </div>
+            <div class="instructors">
+                <span class="accent-leaf">🌿</span> סדנת קיץ מרוכזת + ליווי והדרכה לאורך שנת הלימודים <span class="accent-leaf">🌿</span>
+            </div>
+            <p class="gender-note">*הטקסט מנוסח בלשון נקבה אך מיועד לכל המגדרים.</p>
+        </div>
+
+        <div class="infographic">
+            <div class="quote-box">
+                <p>סייעת אישית היא הרבה יותר מ'עוד מבוגר בכיתה'. לסייעת יש תפקיד מרכזי בחוויה החינוכית, החברתית והרגשית של הילד-ה. היא יכולה להיות דמות שמסייעת בהנגשה ומאפשרת לילד-ה להרגיש ביטחון ושייכות, לחוות הצלחות, להיכלל ולשגשג.</p>
+            </div>
+
+            <div class="intro-text">
+                <p>לקראת פתיחת שנת הלימודים החדשה, אנו פותחות תכנית המיועדת לסייעות שמלוות ילדים-ות אוטיסטים-ות בגנים ובכיתות – למי שמאמינות שקשר אמיתי, כבוד ויציבות הם הבסיס להצלחה, ושלסייעת יש תפקיד מרכזי בחוויה החינוכית והחברתית של הילד-ה.</p>
+                <p>התכנית נבנתה מתוך תפיסה הרואה באוטיזם שונות נוירולוגית שיש להבין ולכבד, היכרות מעמיקה עם מערכות חינוך, טיפול ורווחה, ושאיפה לפיתוח סביבות ומענים מותאמים, מכבדים ומאפשרים יותר. מטרתה לגשר על הפער בין הצרכים השונים, ולהעניק ארגז כלים וידע עדכני – הן לסייעות בתחילת דרכן והן לוותיקות. הליווי מתחיל עוד לפני הפגישה עם הילד-ה, וממשיך לאורך כל השנה.</p>
+            </div>
+
+            <div class="grid-2col">
+                <div class="info-card">
+                    <h3>📅 סדנת קיץ מרוכזת</h3>
+                    <p><strong>12 שעות | 4 מפגשים</strong><br>
+                    למידה חווייתית לקראת פתיחת שנת הלימודים.<br><br>
+                    <strong>ימי שני, 16:00–19:00</strong><br>
+                    27 ביולי, 3 באוגוסט, 17 באוגוסט, 7 בספטמבר 2026</p>
+                </div>
+                <div class="info-card">
+                    <h3>🔄 ליווי שנתי בקבוצה קטנה</h3>
+                    <p><strong>24 שעות | 16 מפגשים בני 90 דק׳</strong><br>
+                    מרחב לעיבוד מצבים מהשטח, העמקה, חשיבה משותפת ודיוק הכלים.<br><br>
+                    <strong>אחת לשבועיים, אוקטובר–יוני</strong><br>
+                    ימי שני אחה"צ</p>
+                </div>
+            </div>
+            
+            <div class="whatsapp-banner">
+                <span>📱</span>
+                <div>
+                    <strong>קבוצת ווטסאפ מלווה עם המנחות</strong><br>
+                    להתייעצות ולמענה בין המפגשים
+                </div>
+            </div>
+
+            <h2 class="section-title">בין הנושאים שנלמד</h2>
+            <div class="topics-grid">
+                <div class="topic-tag"><span>♾️</span> אוטיזם ומגוון נוירולוגי</div>
+                <div class="topic-tag"><span>♾️</span> תפקיד הסייעת ואתיקה מקצועית</div>
+                <div class="topic-tag"><span>♾️</span> בניית קשר, אמון והדדיות</div>
+                <div class="topic-tag"><span>♾️</span> מיפוי חוזקות, צרכים ותחומי עניין</div>
+                <div class="topic-tag"><span>♾️</span> ייצוג עצמי</div>
+                <div class="topic-tag"><span>♾️</span> זיהוי עומס, הצפה ומצוקה</div>
+                <div class="topic-tag"><span>♾️</span> תמיכה בשיעור, במעברים ובהפסקות</div>
+                <div class="topic-tag"><span>♾️</span> תיווך חברתי מכבד</div>
+                <div class="topic-tag"><span>♾️</span> עבודה עם צוות והורים</div>
+            </div>
+
+            <div class="tech-details">
+                <ul>
+                    <li>📍 <strong>מיקום:</strong> זום</li>
+                    <li>📅 <strong>זמנים:</strong> ימי שני אחה״צ</li>
+                    <li>👥 <strong>הרשמה:</strong> מספר המקומות מוגבל</li>
+                </ul>
+            </div>
+
+            <div class="price-box">
+                <div class="full-price">💰 מחיר: 3,200 ש״ח</div>
+                <div class="early-bird">הרשמה מוקדמת עד סוף יוני בלבד: 2,800 ש״ח</div>
+            </div>
+
+            <h2 class="section-title">על המנחות</h2>
+            <div class="instructors-section">
+                <div class="instructor-card">
+                    <h3>ד״ר אריאלה עילם</h3>
+                    <p>פסיכולוגית שיקומית מדריכה ונוירופסיכולוגית, בעלת ניסיון רב באבחון, טיפול, הדרכה ופיתוח מענים לאוטיסטים-ות ולמשפחות. עבודתה משלבת ידע קליני ותפיסה הרואה באוטיזם שונות נוירולוגית שיש להבין, לכבד ולהנגיש.</p>
+                </div>
+                <div class="instructor-card">
+                    <h3>אלה קורילן</h3>
+                    <p>אשת חינוך אוטיסטית, מומחית להוראה מותאמת, פעילה למען זכויותיהם-ן של אוטיסטים-ות ומסטרנטית בחוג לבריאות נפש קהילתית באוניברסיטת חיפה. עבודת התיזה שלה עוסקת ברווחה נפשית וחוסן אוטיסטי מנקודת מבט נוירו-אפירמטיבית.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>טופס התעניינות והרשמה 📝</h2>
+            <p>לחצו כאן כדי למלא את הפרטים, ונחזור אליכן בהקדם</p>
+            <a href="https://forms.gle/MzP69JccZx9jP214A" target="_blank" rel="noopener" class="submit-btn">
+                למעבר לטופס ההרשמה
+            </a>
+        </div>
+
+        <footer>
+            🌱 התכנית נבנתה מתוך אמונה שכל ילד-ה יכולים לפרוח כשהסביבה מותאמת, ושהסייעת היא שותפה מרכזית במסע.
+        </footer>
+    </div>
+</body>
+</html>
