@@ -43,7 +43,7 @@
             overflow: hidden;
         }
 
-        /* Utility class to prevent line breaks */
+        /* מניעת שבירת שורות */
         .nowrap {
             white-space: nowrap;
         }
@@ -52,7 +52,7 @@
         .hero {
             background: linear-gradient(145deg, #7A9E9F 0%, #5B8A8C 100%);
             color: white;
-            padding: clamp(30px, 7vw, 55px) clamp(20px, 6vw, 45px);
+            padding: clamp(30px, 7vw, 55px) clamp(15px, 5vw, 45px);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -92,7 +92,7 @@
         }
 
         .hero .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-size: clamp(0.85rem, 3.5vw, 1.3rem); /* הותאם כדי שייכנס בשורה אחת גם במסכים קטנים */
             font-weight: 400;
             opacity: 0.93;
             margin-bottom: 1.8rem;
@@ -108,22 +108,25 @@
             font-size: clamp(0.95rem, 2.2vw, 1.15rem);
             font-weight: 500;
             background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 10px 28px;
-            border-radius: 50px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 16px 32px;
+            border-radius: 35px;
             position: relative;
             z-index: 1;
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             max-width: 100%;
-            line-height: 1.5;
+            line-height: 1.3;
         }
 
         .accent-leaf {
             display: inline-block;
-            margin: 0 6px;
-            font-size: 1.5rem;
-            vertical-align: middle;
+            font-size: 1.6rem;
+            line-height: 1;
         }
 
         .gender-note {
@@ -379,7 +382,7 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 6px 18px rgba(91, 138, 140, 0.35);
-            min-height: 48px; /* Standard Apple touch target size */
+            min-height: 48px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -444,14 +447,19 @@
     <div class="container">
         <div class="hero">
             <h1>סדנת הכנה ותכנית הדרכה שנתית<br>לסייעות אישיות <span class="nowrap">לילדים-ות</span> <span class="nowrap">אוטיסטים-ות</span></h1>
+            
             <div class="subtitle">
                 <strong>בהנחיית:</strong><br>
-                ד״ר אריאלה עילם - פסיכולוגית שיקומית&nbsp;מדריכה<br>
-                אלה קורילן - אשת חינוך אוטיסטית
+                <span class="nowrap">ד״ר אריאלה עילם - פסיכולוגית שיקומית מדריכה</span><br>
+                <span class="nowrap">אלה קורילן - אשת חינוך אוטיסטית</span>
             </div>
+
             <div class="instructors">
-                <span class="accent-leaf">🌿</span> סדנת קיץ מרוכזת + ליווי והדרכה לאורך שנת הלימודים <span class="accent-leaf">🌿</span>
+                <span class="nowrap">סדנת קיץ מרוכזת</span>
+                <span class="accent-leaf">🌿</span>
+                <span class="nowrap">ליווי והדרכה לאורך שנת הלימודים</span>
             </div>
+
             <p class="gender-note">*הטקסט מנוסח בלשון נקבה אך מיועד לכל המגדרים.</p>
         </div>
 
